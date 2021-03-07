@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'books/show'
+  get 'books/:id' => "books#show"
+  delete 'books/:id' => "books#destroy"
   get 'books/index'
   get 'books/new'
   resources :tasks
