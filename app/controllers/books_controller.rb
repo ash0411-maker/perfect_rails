@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
-  protect_from_forgery_except: [:destroy]
+  protect_from_forgery except: [:destroy]
   before_action :set_book, only: [:show, :destroy]
 
   def show
     @books = Book.find(params[:id])
     respond_to do |format|
       format.html
-      format.json
+      format.json { render json: @book }
     end
   end
 
@@ -27,6 +27,6 @@ class BooksController < ApplicationController
   private
 
   def set_book
-    @book = Book.find(prams[:id])
+    @book = Book.find(params[:id])
   end
 end
