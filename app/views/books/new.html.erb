@@ -1,2 +1,5 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<%= form_with(model: @book, local: true) do |f| %>
+  <div>
+    <%= f.submit data: {disable_with: "送信中"} %>
+  </div>
+<%end%>
