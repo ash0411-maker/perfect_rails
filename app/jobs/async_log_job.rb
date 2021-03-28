@@ -1,7 +1,8 @@
 class AsyncLogJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
+  def perform(message: "hello")
     # Do something later
+    AsyncLog.create!(message: message)
   end
 end

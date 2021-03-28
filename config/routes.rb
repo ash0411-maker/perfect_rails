@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :books
   resources :publishers
   resource :profile, only: %i{show edit update}
