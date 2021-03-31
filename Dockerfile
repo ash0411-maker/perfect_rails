@@ -1,3 +1,5 @@
+# syntax = docker/dockerfile:experiment
+
 # Node.jsダウンロード用ビルドステージ
 FROM ruby:2.6.3 AS nodejs
 
@@ -38,7 +40,7 @@ RUN yarn install
 
 COPY --chown=rails . /app
 
-RUN bin/rails assets:precompile
+# RUN bin/rails assets:precompile
 
 VOLUME /app/public
 
